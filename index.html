@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雲科幣</title>
+    <!-- Bootstrap CSS 4.2.1 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+   <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</head>
+<style>
+    /* 設定導覽列背景顏色和文字顏色 */
+    #navbar {
+      height: 10%;
+      background-color: #0097B2;
+    }
+    #navbar a {
+      color: #ffffff;
+    }
+    
+    /* 設定Main區塊的背景圖片和文字樣式 */
+    #main {
+      background-image: url(https://picsum.photos/1200/600);
+      background-size: cover;
+      background-position: center;
+      color: #ffffff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      /* padding: 50px; */
+      /* 使用calc()函數動態計算Main區塊的高度 */
+      /*height: calc(100vh - 56px);  56px是導覽列的高度 */
+      height: calc(100vh - var(--nav-height));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+  </style>
+<body>
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand font-weight-bold" href="#">
+                <img src="https://picsum.photos/30/30" width="30" height="30" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="shop.html">商店 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">白皮書</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">繁體中文</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">連結錢包</a>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+  <div id="main">
+    <h1>雲科幣</h1>
+  </div>
+</body>
+<script>
+    const navHeight = document.querySelector('.navbar').offsetHeight;
+    document.documentElement.style.setProperty('--nav-height', navHeight + 'px');
+
+</script>
+</html>
