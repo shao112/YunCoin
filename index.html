@@ -46,36 +46,56 @@
     }
   </style>
 <body>
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand font-weight-bold" href="#">
-              <img src="static/img/letter-y.png" width="30" height="30" alt="">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="shop.html">商店 <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://chase5wss-organization.gitbook.io/yun-ke-bi/">白皮書</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#"> 鑄造NFT</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://app.uniswap.org/0xA82B39682097DB1c787DF0c62f0d196d672ABB87#/swap">DEX</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><span class="link-to-metamask">連結錢包</span></a>
-                </li>
-                </ul>
-            </div>
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand font-weight-bold" href="#">
+          <img src="static/img/letter-y.png" width="30" height="30" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="shop.html">商店 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://chase5wss-organization.gitbook.io/yun-ke-bi/">白皮書</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://luxury-piroshki-70bf35.netlify.app/"> 鑄造NFT</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="" data-toggle="modal" data-target="#exampleModal">DEX</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"><span class="link-to-metamask">連結錢包</span></a>
+            </li>
+            </ul>
         </div>
-    </nav>
-
+    </div>
+  </nav>
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">通知</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        請先複製以下地址，再前往 DEX
+      </div>
+      <div class="modal-footer">
+        <input id="Dex" type="hidden" value="0xA82B39682097DB1c787DF0c62f0d196d672ABB87">
+        <button type="button" class="btn btn-secondary" onclick="copy()">複製地址</button>
+        <a href="https://app.uniswap.org/0xA82B39682097DB1c787DF0c62f0d196d672ABB87#/swap" target="_blank" class="btn btn-primary text-white">前往DEX</a>
+      </div>
+    </div>
+  </div>
+</div>
   <div id="main">
     <h1>雲科幣</h1>
   </div>
@@ -84,5 +104,25 @@
     const navHeight = document.querySelector('.navbar').offsetHeight;
     document.documentElement.style.setProperty('--nav-height', navHeight + 'px');
 
+    
+</script>
+<script>
+    // function copy(){
+    //   var dex = document.querySelector("#DEX");
+    //   console.log(dex);
+    //   dex.select();
+    //   document.execCommand("copy");
+    //   alert("已複製");
+    // }
+    function copy() {
+      var dex = document.querySelector("#Dex");
+      navigator.clipboard.writeText(dex.value)
+        .then(function() {
+          alert("已複製");
+        })
+        .catch(function(error) {
+          console.error("複製失敗:", error);
+        });
+    }
 </script>
 </html>
