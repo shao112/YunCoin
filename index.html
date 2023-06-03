@@ -16,7 +16,7 @@
     /* 設定導覽列背景顏色和文字顏色 */
     #navbar {
       height: 10%;
-      background-color: #0097B2;
+      background-color: #285b64;
     }
     #navbar a {
       color: #ffffff;
@@ -24,7 +24,7 @@
     
     /* 設定Main區塊的背景圖片和文字樣式 */
     #main {
-      background-image: url(https://picsum.photos/1200/600);
+      background-image: url(static/img/YunCoin-BM.png);
       background-size: cover;
       background-position: center;
       color: #ffffff;
@@ -48,9 +48,8 @@
 <body>
   <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-        <a class="navbar-brand font-weight-bold" href="#">
-          <img src="static/img/letter-y.png" width="30" height="30" alt="">
-        </a>
+        <img src="static/img/letter-y.png" width="25" height="25" alt="">
+        <span class="navbar-brand font-weight-bold ml-2">雲科幣</span>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -69,7 +68,7 @@
                 <a class="nav-link" href="" data-toggle="modal" data-target="#exampleModal">DEX</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link"><span class="link-to-metamask">連結錢包</span></a>
+                <a class="nav-link" href=""><span class="link-to-metamask">連結錢包</span></a>
             </li>
             </ul>
         </div>
@@ -96,9 +95,7 @@
     </div>
   </div>
 </div>
-  <div id="main">
-    <h1>雲科幣</h1>
-  </div>
+  <div id="main"></div>
 </body>
 <script>
     const navHeight = document.querySelector('.navbar').offsetHeight;
